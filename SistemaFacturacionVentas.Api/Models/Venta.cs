@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SistemaFacturacionVentas.Api.Models;
 
 public class Venta
@@ -8,7 +10,10 @@ public class Venta
     public int UsuarioId { get; set; }
     public Usuario? Usuario { get; set; }
     public DateTime Fecha { get; set; } = DateTime.Now;
+
+    [Column(TypeName = "decimal(18,2)")]
     public decimal Total { get; set; }
+
     public string Estado { get; set; } = "Registrada";
     public List<DetalleVenta> Detalles { get; set; } = new();
 }
