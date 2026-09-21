@@ -1,0 +1,6 @@
+@SistemaFacturacionVentas.Api_HostAddress = http://localhost:5067
+
+GET {{SistemaFacturacionVentas.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
