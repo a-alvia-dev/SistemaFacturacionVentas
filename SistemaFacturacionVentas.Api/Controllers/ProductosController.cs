@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using SistemaFacturacionVentas.Api.Data;
 using SistemaFacturacionVentas.Api.Models;
 
@@ -53,6 +54,7 @@ public class ProductosController : ControllerBase
 
     // DELETE: api/productos/5
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteProducto(int id)
     {
         var producto = await _context.Productos.FindAsync(id);
