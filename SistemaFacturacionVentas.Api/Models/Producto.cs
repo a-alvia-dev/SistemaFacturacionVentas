@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace SistemaFacturacionVentas.Api.Models;
 
@@ -12,4 +13,7 @@ public class Producto
 
     public int StockActual { get; set; }
     public bool Activo { get; set; } = true;
+
+    [Timestamp]
+    public byte[]? RowVersion { get; set; }
 }
